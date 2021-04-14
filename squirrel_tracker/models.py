@@ -37,7 +37,7 @@ class Squirrel(models.Model):
 
 
     X = models.DecimalField(
-            help_text=_('Longitutde of sighting'),
+            help_text=_('Add the Longitude of where the squirrel appears'),
             max_digits=20,
             decimal_places=15,
             blank = True,
