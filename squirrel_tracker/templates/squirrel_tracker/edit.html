@@ -1,11 +1,29 @@
 <!doctype>
 <html>
-	<body>
-		<form method = "post">
-			{% csrf_token %}
-			{{ form.as_p}}
-			<br>
-			<input type='submit' name="Submit">
-		</form>
-	</body>
+        <head>
+                <title>Squirrel Tracker: Add a Squirrel Sight</title>
+ 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+ integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </head>
+
+        <body>
+		 <style>body{padding-left:10px; padding-right:10px;}</style>
+ 		 <p>
+  		<br>
+  		<strong><h1>
+   		<img src="http://pic.90sjimg.com/original_origin_pic/18/11/04/82b7777bc8148349cc8790c03662fdc6.png" style="width:60px" class="rounded" alt="..." >   
+  		 Did you see a new Sqiurrel?    
+ 		 </strong></h1>
+  		<hr>
+ 	 <p>Please share your findings by filling in the form below</p >
+
+ 	 <br>
+                <form method='post'>
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <br>
+   <p>Thank You! </p >
+   <input type='submit' name="Submit">
+  </form>
+ </body>
 </html>
