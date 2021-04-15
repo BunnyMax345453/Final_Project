@@ -42,6 +42,9 @@
     <li> Django 2.2.8 </li>
 </ul>
 
+#Deploy
+<p> Because we are experiencing an intense schedule, our group didn't have enough time to deploy successfully. We tried our best, but it didn't work out. In this way, we would leave it to future work. </p>
+
 #Creater comments
 <p> Thank you for spending time viewing our project! We are open to any suggestions and comments. </p>
 
