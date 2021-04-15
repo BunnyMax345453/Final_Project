@@ -73,6 +73,11 @@ def get_stats(request):
     foraging_count = 0
     approaches_count = 0
     moans_count = 0
+
+    chasing_count = 0
+    eating_count = 0
+    climbing_count = 0
+
     for  s in  Squirrel.objects.all():
        if s.Shift == 'AM':
            am_count += 1
@@ -86,6 +91,15 @@ def get_stats(request):
             approaches_count += 1
        if s.Moans == True:
             moans_count += 1
+
+       if s.Chasing == True:
+            chasing_count += 1
+       if s.Eating == True:
+            eating_count += 1
+       if s.Climbing == True:
+            climbing_count += 1
+
+
     context ={ 
              'AM_count' : am_count,
              'PM_count' : pm_count,
@@ -93,9 +107,14 @@ def get_stats(request):
              'Foraging_count' : foraging_count,
              'Approaches_count' : approaches_count,
              'Moans_count' : moans_count,
+
+             'Chasing_count' : chasing_count ,
+             'Eating_count' : eating_count ,
+             'Climbing_count' : climbing_count, 
         }
     return render(request, 'squirrel_tracker/stat.html', context)
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
 
