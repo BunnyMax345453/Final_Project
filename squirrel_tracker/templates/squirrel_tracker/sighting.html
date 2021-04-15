@@ -1,86 +1,93 @@
 <!doctype>      
 <html lang='en'>
-        <head>
-                <title> This is the Sightings view </title>
+	<head>
+		<title> This is the Sightings view </title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<p><h4><a href = '/' class="badge badge-primary">Back</a> </h4></p>
+		<p>
+			<h4>
+				<a href = '/' class="badge badge-primary">Back</a> 
+			</h4>
+		</p>
+
+		<p>
+			<br>
+			<strong>
+			<h1 class='text-center'>
+				<img src="https://img1.baidu.com/it/u=3837107914,3708117760&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." >    
+				We can track all the squirrels in NYC!    
+				<img src="https://img1.baidu.com/it/u=3837107914,3708117760&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." ></strong>
+			</h1>
+			<hr>
+		</p>
+	</head> 
 
 
+	<body>                
+		<style>
+			body {
+			padding-left: 10px; padding-right: 10px;
+				}
+		</style>               
 
-                <p>
-                <br>
-                <strong><h1 class='text-center'> <img src="https://img1.baidu.com/it/u=3837107914,3708117760&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." >    
-	We can track all the squirrels in NYC!    
-	<img src="https://img1.baidu.com/it/u=3837107914,3708117760&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." ></strong></h1>
-                <hr>
-                </p>
-        </head> 
+		<p>
+			<br>    
+			<h3 class='text-center'>
+				<img src="https://st2.depositphotos.com/2945617/6862/v/600/depositphotos_68623039-stock-illustration-cute-squirrel-cartoon.jpg" style="width:60px" class="rounded" alt="..." >   
+				Squirrel Data Summary   
+				<a href = '/sightings/stats' class="badge badge-primary">Click Here</a> 
+			</h3>   
+		</p>	
 
-
-        <body>                
- <style>
-      body {
-        padding-left: 10px; padding-right: 10px;
-      }
-</style>               
-                
-               
-          
-                <span>             
-                <br>    
-                <h3 class='text-center'> <img src="https://st2.depositphotos.com/2945617/6862/v/600/depositphotos_68623039-stock-illustration-cute-squirrel-cartoon.jpg" style="width:60px" class="rounded" alt="..." >   
-                               Squirrel Data Summary   
-                             <a href = '/sightings/stats' class="badge badge-primary">Click Here</a> 
-	   </h3>   
-   
-	</span>
-    
-
-                <hr>    
-                 <p>
-                <br>                    
-                <h3 class='text-center'> <img src="https://i.pinimg.com/originals/12/c2/77/12c277ab88f53c9cd1d5aecfeab1bbf0.png" style="width:60px" class="rounded" alt="..." >  If you find a new squirrel,  
-	<a href = '/sightings/add'' class="badge badge-primary">Click Here</a> to add!
-	</h3>
-	</p>
+		<hr>    
+		<p>
+			<br>                    
+			<h3 class='text-center'>
+				<img src="https://i.pinimg.com/originals/12/c2/77/12c277ab88f53c9cd1d5aecfeab1bbf0.png" style="width:60px" class="rounded" alt="..." >
+				If you find a new squirrel,
+				<a href = '/sightings/add'' class="badge badge-primary">Click Here</a>
+				to add!
+			</h3>
+		</p>	
 
 
-                <hr>            
-                <p>
-                <br>
-                <h3 class='text-center'> 
-	<img src="https://img0.baidu.com/it/u=3776646088,3601416339&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." >    
-	Update a Particular Sighting of a Squirrel    </h3>
-              
-                </p>
-                <br>
-                <div>
-                <table class="table">
-                        <div class="alert alert-dark text-center" role="alert">
-                                <h5><strong> Squirrel Database </strong></h5>
-                        </div>
-                        <thead class = "thead-dark">
-                                <tr>
-                                        <th scope = "col">Unique Squirrel Id</th>
-                                        <th scope = "col">Date</th>
+		<hr>            
+		<p>
+			<br>
+			<h3 class='text-center'> 
+				<img src="https://img0.baidu.com/it/u=3776646088,3601416339&fm=26&fmt=auto&gp=0.jpg" style="width:60px" class="rounded" alt="..." >    
+				Update a Particular Sighting of a Squirrel    </h3>
+             	 
+		</p>
+		<br>
+		<div>
+			<table class="table">	
 
-                                </tr>
-                        </thead>
+				<div class="alert alert-dark text-center" role="alert">
+					<h5><strong> Squirrel Database </strong></h5>
+				</div>	
 
-                        <tbody>
-                        {% for squirrel in squirrels %}
-                                <tr>
-                                        <td><a href = '/sightings/{{ squirrel.Unique_squirrel_ID}}'>{{squirrel.Unique_squirrel_ID}}</a></td>
+				<thead class = "thead-dark">
+					<tr>
+						<th scope = "col">Unique Squirrel Id</th>
+						<th scope = "col">Date</th>
+					</tr>
+				</thead>
 
-                                        <td>{{ squirrel.Date }}</td>
+				<tbody>
+					{% for squirrel in squirrels %}
+					<tr>
+						<td><a href = '/sightings/{{ squirrel.Unique_squirrel_ID}}'>{{squirrel.Unique_squirrel_ID}}</a></td>
+						<td>{{ squirrel.Date }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>	
 
-                                </tr>
-                        {% endfor %}
-                        </tbody>
-                </table>
-                </div>
-                <br>
-        </body>
+			</table>
+		</div>
+
+		<br>
+	</body>
 </html>
+
 
