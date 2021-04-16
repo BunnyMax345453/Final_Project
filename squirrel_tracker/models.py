@@ -1,11 +1,9 @@
 from django.db import models
-
 from django.utils.translation import gettext as _
 
 # Create your models here.
 
 class Squirrel(models.Model):
-
 
     AM = 'AM'
     PM = 'PM'
@@ -16,7 +14,6 @@ class Squirrel(models.Model):
     Gray = 'GRAY'
     Cinnamon = 'CINAMMON'
     Black = 'BLACK'
-
 
     AGE_CHOICES = (
             (ADULT, 'ADULT'),
@@ -41,7 +38,6 @@ class Squirrel(models.Model):
             decimal_places = 30,
             blank = True,
         )
-    
 
     Shift = models.CharField(
             help_text=_('Choose AM or PM'),
@@ -49,11 +45,13 @@ class Squirrel(models.Model):
             choices=TIME_CHOICES,
             blank = True,
         )
+
     Date = models.IntegerField(
             help_text=_('When did the sighting happen?'),
             null = True,
             blank = True,
         )
+
     Unique_squirrel_ID = models.CharField(
             help_text=_('What is the unique_squirrel_ID?'),
             max_length=20,
@@ -79,7 +77,6 @@ class Squirrel(models.Model):
             choices = COLOR_CHOICES,
             blank = True,
         )
-
 
     GROUND_PLANE = 'Ground Plane'
     ABOVE_GROUND = 'Above Ground'
@@ -111,10 +108,12 @@ class Squirrel(models.Model):
             help_text=_('Either True or False'),
             default=False,
          )
+
     Climbing = models.BooleanField(
             help_text=_('Either True or False'),
             default=False,
         )
+
     Eating = models.BooleanField(
             help_text=_('Either True or False'),
             default=False,
@@ -136,7 +135,6 @@ class Squirrel(models.Model):
             default=False,
         )
     
-
     Quaas = models.BooleanField(
             help_text=_('Either True or False'),
             default=False,
@@ -166,6 +164,7 @@ class Squirrel(models.Model):
             help_text=_('Either True or  False'),
             default=False,
         )
+
     Runs_from = models.BooleanField(
             help_text=_('Either True or False'),
             default=False,
@@ -173,19 +172,3 @@ class Squirrel(models.Model):
 
     def __str__(self):
         return self.Unique_squirrel_ID
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            

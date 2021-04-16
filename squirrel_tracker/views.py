@@ -1,14 +1,9 @@
 from django.shortcuts import render, redirect
-
-
-# Create your views here
-
 from django.http import HttpResponse
-
 from .models import Squirrel
-
 from .forms import SquirrelForm
 
+# Create your views here
 
 #def index(request):
 #    return HttpResponse("Hello, world. You're at the squirrel tracker  index.")
@@ -24,14 +19,12 @@ def get_map(request):
         }
     return render(request, 'squirrel_tracker/map.html',context)
 
-
 def get_sighting(request):
     squirrels = Squirrel.objects.all()
     context = {
             'squirrels': squirrels,
         }
     return render(request, 'squirrel_tracker/sighting.html',context)
-
 
 def edit_squirrel(request, Unique_squirrel_ID):
     squirrel = Squirrel.objects.get(Unique_squirrel_ID = Unique_squirrel_ID)
@@ -45,10 +38,7 @@ def edit_squirrel(request, Unique_squirrel_ID):
     context ={
             'form':form
         }
-
     return render(request,'squirrel_tracker/edit.html',context)
-
-
 
 def add_squirrel(request):
     if request.method == "POST":
@@ -63,9 +53,6 @@ def add_squirrel(request):
         }
     return render(request,'squirrel_tracker/edit.html',context)
 
-
-
-
 def get_stats(request):
     am_count = 0
     pm_count = 0
@@ -73,7 +60,6 @@ def get_stats(request):
     foraging_count = 0
     approaches_count = 0
     moans_count = 0
-
     chasing_count = 0
     eating_count = 0
     climbing_count = 0
@@ -91,14 +77,12 @@ def get_stats(request):
             approaches_count += 1
        if s.Moans == True:
             moans_count += 1
-
        if s.Chasing == True:
             chasing_count += 1
        if s.Eating == True:
             eating_count += 1
        if s.Climbing == True:
             climbing_count += 1
-
 
     context ={ 
              'AM_count' : am_count,
@@ -107,14 +91,8 @@ def get_stats(request):
              'Foraging_count' : foraging_count,
              'Approaches_count' : approaches_count,
              'Moans_count' : moans_count,
-
              'Chasing_count' : chasing_count ,
              'Eating_count' : eating_count ,
              'Climbing_count' : climbing_count, 
         }
     return render(request, 'squirrel_tracker/stat.html', context)
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-
-
